@@ -1,6 +1,6 @@
 import 'whatwg-fetch'
 import { isAcrobatInstalledInIE } from './pdfplugin'
-import { getBrowserVersion } from '../environment'
+import { getBrowserVersion } from './environment'
 
 const mockApi = {}
 const mockData = {}

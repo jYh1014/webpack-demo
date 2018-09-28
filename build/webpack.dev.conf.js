@@ -9,18 +9,13 @@ console.log(process.env.NODE_ENV)
 console.log(path.join('foo', 'bar', 'baz/asdf','/quux', ''))
 console.log(path.resolve('foo/bar', '/tmp/file/', '..', 'a/../subfile'))
 module.exports = {
-    // entry: [
-    //     'react-hot-loader/patch',
-    //     path.join(__dirname, '../src/index.js')
-    // ],
     entry: {
         app: './src/index.js',
-        jq: './utils/jq.js'
+        utils: './src/utils'
     },
     output: {
         path: path.join(__dirname, "/dist"),
         filename:'[name].bundle.js',
-        // publicPath: '/'
     },
     module:{
         rules:[
@@ -55,30 +50,29 @@ module.exports = {
                     name: 'audio/[name].[hash:8].[ext]',
                 },
             },
-            {
-                test: /\.less$/,
-                use: ['style-loader','css-loader','less-loader']
-            },
             // {
             //     test: /\.less$/,
-            //     use: ExtractTextPlugin.extract({
-            //         fallback: "style-loader",
-            //         use: ['css-loader','less-loader']
-            //     })
-            // }
+            //     use: ['style-loader','css-loader','less-loader']
+            // },
+            {
+                test: /\.less$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ['css-loader','less-loader']
+                })
+            }
         ]
     },
-    // devServer: {
-    //     contentBase:path.join(__dirname,'/'),
-    //     // publicPath: "/",
-    //     compress: true,
-    //     port: 9001,
-    //     hot: true,
-    //     host:'0.0.0.0'
+    // resolve: {
+    //     extensions: [' ',".js"],
+    //     // root: [path.resolve(__dirname, './src')],
+    //     alias: {
+    //         Utils: path.resolve(__dirname, 'src/utils/index.js')
+    //     }
     // },
-    externals: {
-        jquery: 'jq'
-      },
+    // externals: {
+    //     jquery: 'jq'
+    //   },
     plugins: [
         new webpack.DefinePlugin({
             'process.env': config.dev.env,
@@ -91,7 +85,7 @@ module.exports = {
             inject: true
           }),
         new webpack.optimize.CommonsChunkPlugin({
-            names:['jq'],
+            names:['utils'],
             filename: '[name].min.js'
         }),
         
