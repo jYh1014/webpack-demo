@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import './styles/app.less'
 import { hot } from 'react-hot-loader'
 import '../module'
-import Message from './Message'
+import Message from '@/Message.js'
 import SubHeader from './SubHeader'
 // import '../utils/jq'
 class App extends React.Component {

@@ -63,13 +63,13 @@ module.exports = {
             }
         ]
     },
-    // resolve: {
-    //     extensions: [' ',".js"],
-    //     // root: [path.resolve(__dirname, './src')],
-    //     alias: {
-    //         Utils: path.resolve(__dirname, 'src/utils/index.js')
-    //     }
-    // },
+    resolve: {
+        extensions: [".js",'.jsx'],
+        alias: {
+            '@': path.resolve(__dirname, '..', 'src'),
+            'Utils': path.resolve(__dirname, '..', 'src/utils')
+        }
+    },
     // externals: {
     //     jquery: 'jq'
     //   },

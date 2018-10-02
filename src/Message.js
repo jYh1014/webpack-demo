@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import  './styles/app.less'
 import { Image } from 'antd'
-// import fetch from 'Utils'
+import utils from 'Utils'
 import img from './static/3.png'
 import { Button } from 'antd'
 class Message extends React.Component{
