@@ -6,6 +6,7 @@ import { hot } from 'react-hot-loader'
 import '../module'
 import Message from '@/Message.js'
 import SubHeader from './SubHeader'
+import b from './b'
 // import '../utils/jq'
 class App extends React.Component {
     constructor(props) {

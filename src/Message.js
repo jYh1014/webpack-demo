@@ -5,6 +5,7 @@ import { Image } from 'antd'
 import utils from 'Utils'
 import img from './static/3.png'
 import { Button } from 'antd'
+import b from './b'
 class Message extends React.Component{
     constructor(props){
         super(props)

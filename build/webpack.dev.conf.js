@@ -3,7 +3,6 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 var merge = require('webpack-merge')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-var manifest = require('../dist/vendor.manifest.json')
 var config = require('../config')
 console.log(process.env.NODE_ENV)
 console.log(path.join('foo', 'bar', 'baz/asdf','/quux', ''))
@@ -11,7 +10,7 @@ console.log(path.resolve('foo/bar', '/tmp/file/', '..', 'a/../subfile'))
 module.exports = {
     entry: {
         app: './src/index.js',
-        utils: './src/utils'
+        utils: ['Utils']
     },
     output: {
         path: path.join(__dirname, "/dist"),
@@ -85,10 +84,13 @@ module.exports = {
             inject: true
           }),
         new webpack.optimize.CommonsChunkPlugin({
-            names:['utils'],
+            names:'vendor',
             filename: '[name].min.js'
         }),
-        
+        new webpack.optimize.CommonsChunkPlugin({
+            names:'a',
+            filename: '[name].min.js'
+        }),
         // new webpack.DllReferencePlugin({
         //     manifest
         //   }),
