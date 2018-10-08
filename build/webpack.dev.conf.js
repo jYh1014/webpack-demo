@@ -84,8 +84,9 @@ module.exports = {
             inject: true
           }),
         new webpack.optimize.CommonsChunkPlugin({
-            names:'vendor',
-            filename: '[name].min.js'
+            names: ['vendor'],
+            filename: '[name].min.js',
+            minChunks: Infinity
         }),
         new webpack.optimize.CommonsChunkPlugin({
             names:'a',
