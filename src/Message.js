@@ -5,7 +5,7 @@ import { Image } from 'antd'
 import utils from 'Utils'
 import img from './static/3.png'
 import { Button } from 'antd'
-import b from './b'
+// import b from './b'
 class Message extends React.Component{
     constructor(props){
         super(props)
@@ -50,18 +50,17 @@ class Message extends React.Component{
         const arr = Array.from(new Set([11,21,21,31]))
         return (
             <div className="message"> 
-             <img src={img} className="messageImg"/>
-             {account}
+             {/* <img src={img} className="messageImg"/> */}
+             {/* {account}
              {
                  arr.map(item => {
                      return (
                          <span key ={item}>{item}</span>
                      )
                  })
-             }
-             <Button onClick={this.add}>点击 + 1</Button>
-             <Button onClick={this.minus}>点击 - 1</Button>
-             <div>{this.state.num}</div>
+             } */}
+             <Button onClick={this.add} type="primary">点击 + 1</Button>
+             <Button onClick={this.minus} type="primary">点击 - 1</Button>
             </div>    
         )
     }

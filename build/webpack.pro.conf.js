@@ -5,10 +5,12 @@ var merge = require('webpack-merge')
 var CleanWebpackPlugin = require('clean-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var config = require('../config')
+var businessBlue = ['./src/assets/styles/blue.less']
 module.exports = {
     entry: {
         app: './src/index.js',
-        utils: ['Utils']
+        utils: ['Utils'],
+        blueTheme: businessBlue.concat(['./src/assets/apps/blue.less'])
     },
     output: {
         path: path.join(__dirname, "..", "/dist"),
@@ -102,6 +104,6 @@ module.exports = {
         new CleanWebpackPlugin(['dist'], {
             root: __dirname
         }),
-        new ExtractTextPlugin('style.css')
+        new ExtractTextPlugin('[name].css')
     ]
 }

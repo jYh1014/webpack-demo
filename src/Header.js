@@ -14,7 +14,7 @@ class Header extends React.Component{
     getState = () => {
         return (
             <div className="header">
-            '---state-----i am header!！---state-----'
+            'i am header!！'
             </div>
         )
         

@@ -4,13 +4,15 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin")
 var merge = require('webpack-merge')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var config = require('../config')
+var businessBlue = ['./src/assets/styles/blue.less']
 console.log(process.env.NODE_ENV)
 console.log(path.join('foo', 'bar', 'baz/asdf','/quux', ''))
 console.log(path.resolve('foo/bar', '/tmp/file/', '..', 'a/../subfile'))
 module.exports = {
     entry: {
         app: './src/index.js',
-        utils: ['Utils']
+        utils: ['Utils'],
+        blueTheme: businessBlue.concat(['./src/assets/apps/blue.less'])
     },
     output: {
         path: path.join(__dirname, "/dist"),
@@ -83,11 +85,11 @@ module.exports = {
             template: 'index.html',
             inject: true
           }),
-        new webpack.optimize.CommonsChunkPlugin({
-            names: ['vendor'],
-            filename: '[name].min.js',
-            minChunks: Infinity
-        }),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     names: ['vendor'],
+        //     filename: '[name].min.js',
+        //     minChunks: Infinity
+        // }),
         new webpack.optimize.CommonsChunkPlugin({
             names:'a',
             filename: '[name].min.js'
@@ -95,6 +97,6 @@ module.exports = {
         // new webpack.DllReferencePlugin({
         //     manifest
         //   }),
-        new ExtractTextPlugin('style.css')
+        new ExtractTextPlugin('[name].css')
     ]
 }
