@@ -12,7 +12,7 @@ module.exports = {
     entry: {
         app: './src/index.js',
         utils: ['Utils'],
-        blueTheme: businessBlue.concat(['./src/assets/apps/blue.less'])
+        blueTheme: businessBlue
     },
     output: {
         path: path.join(__dirname, "/dist"),
