@@ -51,6 +51,7 @@
     "prop-types": "15.6.1",
     "raf": "3.4.0",
     "react": "16.2.0",
+    "react-color": "^2.14.1",
     "react-dom": "16.2.0",
     "react-draft-wysiwyg": "1.12.13",
     "react-json-tree": "0.11.0",

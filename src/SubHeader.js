@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import '../module'
 import Header from './Header'
-// import b from './b'
+import Color from './Color'
 class SubHeader extends Header{
     constructor(props){
         super(props)
@@ -56,6 +56,7 @@ class SubHeader extends Header{
                      )
                  })
              }
+             <Color />
             </div>    
         )
     }

@@ -13,7 +13,8 @@ module.exports = {
         app: './src/index.js',
         utils: ['Utils'],
         blueTheme: businessBlue,
-        orangeTheme: orange
+        orangeTheme: orange,
+        icon: "./src/assets/styles/iconset.less"
     },
     output: {
         path: path.join(__dirname, "/dist"),

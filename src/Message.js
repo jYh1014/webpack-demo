@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 import { Image } from 'antd'
 import utils from 'Utils'
 import img from './static/3.png'
-import { Button } from 'antd'
-// import b from './b'
+import { Button ,Pagination, Steps, Switch } from 'antd'
+const Step = Steps.Step
 class Message extends React.Component{
     constructor(props){
         super(props)
@@ -49,6 +49,16 @@ class Message extends React.Component{
         const arr = Array.from(new Set([11,21,21,31]))
         return (
             <div className="message"> 
+            <br />
+            <Pagination defaultCurrent={6} total={500} />
+            <br />
+            <Steps current={1}>
+                <Step title="Finished" description="This is a description." />
+                <Step title="In Progress" description="This is a description." />
+                <Step title="Waiting" description="This is a description." />
+            </Steps>
+            <br />
+            <Switch defaultChecked />
              {/* <img src={img} className="messageImg"/> */}
              {/* {account}
              {
