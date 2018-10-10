@@ -1,7 +1,6 @@
 import 'babel-polyfill';
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './styles/app.less'
 import { hot } from 'react-hot-loader'
 import '../module'
 import Message from '@/Message.js'

@@ -5,7 +5,6 @@ var merge = require('webpack-merge')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var config = require('../config')
 var businessBlue = ['./src/assets/styles/blue.less']
-console.log(process.env.NODE_ENV)
 console.log(path.join('foo', 'bar', 'baz/asdf','/quux', ''))
 console.log(path.resolve('foo/bar', '/tmp/file/', '..', 'a/../subfile'))
 module.exports = {
@@ -84,7 +83,7 @@ module.exports = {
             filename: 'index.html',
             template: 'index.html',
             inject: true
-          }),
+        }),
         // new webpack.optimize.CommonsChunkPlugin({
         //     names: ['vendor'],
         //     filename: '[name].min.js',
@@ -94,9 +93,6 @@ module.exports = {
             names:'a',
             filename: '[name].min.js'
         }),
-        // new webpack.DllReferencePlugin({
-        //     manifest
-        //   }),
         new ExtractTextPlugin('[name].css')
     ]
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import  './styles/app.less'
 import { Image } from 'antd'
 import utils from 'Utils'
 import img from './static/3.png'
