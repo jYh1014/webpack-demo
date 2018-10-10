@@ -22,7 +22,7 @@ class SubHeader extends Header{
                 break;
           
             default:
-                link.href ='orange' + '.css'
+                link.href ='orangeTheme' + '.css'
                 break;
         }
     }

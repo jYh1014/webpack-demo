@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 import { Image } from 'antd'
 import utils from 'Utils'
 import img from './static/3.png'
-import { Button ,Pagination, Steps, Switch } from 'antd'
-const Step = Steps.Step
+import { Button ,Pagination, Tabs, Switch } from 'antd'
+const TabPane = Tabs.TabPane
 class Message extends React.Component{
     constructor(props){
         super(props)
@@ -42,7 +42,6 @@ class Message extends React.Component{
        })
        let obj = {'0':111,length:1}
        let a = [].slice.call(obj)
-       console.log(a)
     }
     render(){
         const { account } = this.state
@@ -52,11 +51,11 @@ class Message extends React.Component{
             <br />
             <Pagination defaultCurrent={6} total={500} />
             <br />
-            <Steps current={1}>
-                <Step title="Finished" description="This is a description." />
-                <Step title="In Progress" description="This is a description." />
-                <Step title="Waiting" description="This is a description." />
-            </Steps>
+            <Tabs defaultActiveKey="1" >
+                <TabPane tab="Tab 1" key="1">Content of Tab Pane 1</TabPane>
+                <TabPane tab="Tab 2" key="2">Content of Tab Pane 2</TabPane>
+                <TabPane tab="Tab 3" key="3">Content of Tab Pane 3</TabPane>
+            </Tabs>
             <br />
             <Switch defaultChecked />
              {/* <img src={img} className="messageImg"/> */}
