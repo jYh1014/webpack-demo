@@ -5,13 +5,15 @@ var merge = require('webpack-merge')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var config = require('../config')
 var businessBlue = ['./src/assets/styles/blue.less']
+var orange = ['./src/assets/styles/orange.less']
 console.log(path.join('foo', 'bar', 'baz/asdf','/quux', ''))
 console.log(path.resolve('foo/bar', '/tmp/file/', '..', 'a/../subfile'))
 module.exports = {
     entry: {
         app: './src/index.js',
         utils: ['Utils'],
-        blueTheme: businessBlue
+        blueTheme: businessBlue,
+        orangeTheme: orange
     },
     output: {
         path: path.join(__dirname, "/dist"),

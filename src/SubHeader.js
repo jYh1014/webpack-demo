@@ -9,14 +9,11 @@ class SubHeader extends Header{
     }
     toggleColor = (index) => {
         console.log(index)
-        let origin = location.origin
         let link = null
         if (document.querySelector("#skin")) {
             link = document.querySelector("#skin")
-            link.id = "refSkin"
         } else {
             link = this.createLink()
-            link.id = "refSkin"
             document.head.appendChild(link)
         }
         switch (index) {
@@ -25,7 +22,7 @@ class SubHeader extends Header{
                 break;
           
             default:
-                link.href ='blueTheme' + '.css'
+                link.href ='orange' + '.css'
                 break;
         }
     }
