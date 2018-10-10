@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import '../module'
 import Header from './Header'
 import Color from './Color'
 class SubHeader extends Header{

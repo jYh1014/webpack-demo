@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import '../module'
-import 'moment'
+
 // import '../utils/jq'
 class Header extends React.Component{
     constructor(props){
