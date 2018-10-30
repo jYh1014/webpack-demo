@@ -4,7 +4,7 @@ const path = require("path");
 const webpackconfig = require('./build/webpack.dev.conf.js');
 const config = require('./config')
 const options = {
-  contentBase:path.join(__dirname,'/'),
+  contentBase:path.join(__dirname,'/dist/'),
   publicPath:'/',
   hot: true,
   host: '0.0.0.0'
