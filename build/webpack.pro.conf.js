@@ -4,6 +4,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin")
 var merge = require('webpack-merge')
 var CleanWebpackPlugin = require('clean-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 var config = require('../config')
 var businessBlue = ['./src/assets/styles/blue.less']
 module.exports = {
@@ -83,6 +84,13 @@ module.exports = {
             template: 'index.html',
             inject: true
           }),
+          new CopyWebpackPlugin([
+            {
+                from: './public',
+                to: './vendor',
+                ignore: ['.*']
+            }
+        ]),
         new webpack.optimize.CommonsChunkPlugin({
             name: ['vendor','runtime'],
             filename: '[name].js',
