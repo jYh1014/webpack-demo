@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Image } from 'antd'
 import utils from 'Utils'
+import {fromJS,Map} from 'immutable'
+import clonedeep from 'lodash.clonedeep'
 import img from './static/3.png'
 import { Button ,Pagination, Tabs, Switch } from 'antd'
 const TabPane = Tabs.TabPane
@@ -9,15 +11,33 @@ class Message extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            num: 1
+            data: Map({ num: 0 })
         }
     }
 
     add = () => {
-        this.state.num ++
-        this.setState({
-            num: this.state.num 
-        })
+        /*
+        ** 深拷贝
+        */
+        // let data = clonedeep(this.state.data)
+        // data.num = data.num + 1
+        // console.log(data)
+        // this.setState({data: data},function(){
+        //     console.log(this.state.data)
+        // })
+        // console.log(this.state.data.num)
+
+
+        /*
+        ** immutable
+        */
+       let data = this.state.data.update('num', v => v + 1)
+       this.setState({ data:  data});
+        console.log(this.state.data.get('num'))
+        // this.state.num ++
+        // this.setState({
+        //     num: this.state.num 
+        // })
     }
     minus = () => {
         this.state.num --
@@ -26,6 +46,8 @@ class Message extends React.Component{
         })
     }
     componentDidMount = () => {
+        // let $$data = fromJS(this.state.data)
+        // this.setState({data: $$data})
         const data = {num: 10}
        const promise = new Promise(function(resolve, reject){
             if(true){
@@ -35,7 +57,6 @@ class Message extends React.Component{
             }
        })
        promise.then(value => {
-        //    console.log(value)
            this.setState({
                account: value.num
            })
@@ -48,16 +69,6 @@ class Message extends React.Component{
         const arr = Array.from(new Set([11,21,21,31]))
         return (
             <div className="message"> 
-            <br />
-            <Pagination defaultCurrent={6} total={500} />
-            <br />
-            <Tabs defaultActiveKey="1" >
-                <TabPane tab="Tab 1" key="1">Content of Tab Pane 1</TabPane>
-                <TabPane tab="Tab 2" key="2">Content of Tab Pane 2</TabPane>
-                <TabPane tab="Tab 3" key="3">Content of Tab Pane 3</TabPane>
-            </Tabs>
-            <br />
-            <Switch defaultChecked />
              {/* <img src={img} className="messageImg"/> */}
              {/* {account}
              {
@@ -67,6 +78,7 @@ class Message extends React.Component{
                      )
                  })
              } */}
+             <br />
              <Button onClick={this.add} type="primary">点击 + 1</Button>
              <Button onClick={this.minus} type="primary">点击 - 1</Button>
             </div>    

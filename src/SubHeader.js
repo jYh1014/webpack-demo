@@ -45,17 +45,8 @@ class SubHeader extends Header{
         return (
             <div>
             {this.getState()}
-             i am subHeader
-             <h2>切换主题</h2>
-             {
-                 themes.map((item ,index)=> {
-                     let style = {background: item}
-                     return (
-                         <span style={style} key={index} className="theme" onClick={this.toggleColor.bind(this,index)}></span>
-                     )
-                 })
-             }
-             <Color />
+             i am subHeader111
+            
             </div>    
         )
     }
