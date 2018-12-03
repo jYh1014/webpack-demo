@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import { hot } from 'react-hot-loader'
 import Message from '@/Message.js'
 import SubHeader from './SubHeader'
-// import '../utils/jq'
+import WrappedComponent from './WrappedComponent'
 class App extends React.Component {
     constructor(props) {
         super(props)
@@ -14,7 +14,7 @@ class App extends React.Component {
         return (
             <div>
                 <div className="container"> I am app!!</div>
-
+                <WrappedComponent />
                 <Message />
                 <SubHeader />
             </div>
